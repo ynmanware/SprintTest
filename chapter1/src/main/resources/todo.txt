@@ -1,0 +1,12 @@
+Items to be implemented in office
+
+1. add all properties file to rest common configuration
+-> this will remove the dependency of all separate message bundle beans.
+-> AbstractMessageBean is not required anymore
+
+2. propose following
+-> Consolidate all message bundles and keep only two message bundles
+one for exception and the other for normal messages
+
+3. externalize Delegation configuration variables into map
+-> This map can overritten any number of times.
