@@ -1,4 +1,4 @@
-package com.myn.sprinttest.chapter1;
+package com.myn.injection;
 
 import java.util.Locale;
 import java.util.Map.Entry;
@@ -7,10 +7,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.myn.injection.TestUitlInjection;
-
 /**
  * Hello world!
+ *
+ */
+/**
+ * @author Yogesh.Manware
  *
  */
 public class App {

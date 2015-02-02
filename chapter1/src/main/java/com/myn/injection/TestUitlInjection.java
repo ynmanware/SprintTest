@@ -6,14 +6,18 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Yogesh.Manware
+ *
+ */
 @Component
 public class TestUitlInjection {
 
-	@Resource(name="delegationConfiguration")
-	private Map<String, String> configValues;
+	@Resource()
+	private Map<String, String> delegationConfiguration;
 	
 	public Map<String, String> getConfigValues() {
-		return configValues;
+		return delegationConfiguration;
 	}
 
 	public void setConfigValues(Map<String, String> configValues) {

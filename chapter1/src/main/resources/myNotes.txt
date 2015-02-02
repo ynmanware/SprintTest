@@ -1,0 +1,35 @@
+@Autowire - Springs interface
+1. it searches by type
+2. if the bean with same type does not exist then NoSuchBeanDefinitionException is thrown
+3. if more than one bean with the same type exist then also NoSuchBeanDefinitionException is thrown
+4. if @qualifier is used then it is used in case there are more than one bean with same type exist.
+5. multiple @qualifiers can be used in complex examples. 
+ 	like bean with same type and same @qualifier exist then we add one more @qualifier as differentiator and so on
+6. it is not useful when we want to inject something like util:map
+	For this we have to use Resource
+7. it is used in case bean injection is optional by using @required=false	
+8. in case of @Qualifier, the beans are searched first by type and then @Qualifier is used to narrow down the search.
+	If only one bean with the given type exist, then @Qualified never gets used.
+
+@Inject - java interface JSR330 - alternate to @Autowire
+1. It is almost same as @Autowire with few differences
+2. It does not have @required attribute, instead it has Providers to make the beans optional.
+3. Here @Named can be used instead of @Qualifier. 
+4. when we specify @Named, the bean is searched by ID straight away. Spring does not search by type at all.
+5. only @Named cannot be used to inject the Bean
+Note: @Named also is equivalent to @Component when used at the top of class.
+	
+@Resource
+1. the bean is resolved "byName" semantics
+2. if 'name' attribute is not provided then bean name is derived from field name
+3. if the bean with given does not exist, 'byType' is used  
+4. util:map like things can be injected only through @Resource
+5. it does not require 'Qualifier' or 'Named' as it derived the name from field name in case 'name' is not provided
+	 	 	
+ 	
+Difference between ID and Name
+1. id and name both should be unique
+2. id is xml entity and strictly contains xml id
+3. name can contation multiple name to the same bean but it should be unique.
+refer: http://www.intertech.com/Blog/clarifying-spring-framework-ids-and-names/
+

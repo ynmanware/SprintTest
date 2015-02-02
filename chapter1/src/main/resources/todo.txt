@@ -7,6 +7,18 @@ Items to be implemented in office
 2. propose following
 -> Consolidate all message bundles and keep only two message bundles
 one for exception and the other for normal messages
+try consolidation all message bundles and remove duplicates
 
 3. externalize Delegation configuration variables into map
 -> This map can overritten any number of times.
+
+
+
+
+
+Long term goals, record all incoming and outgoing request and responses
+
+Write test suites
+
+write request response loggers using spring aspect - in file
+

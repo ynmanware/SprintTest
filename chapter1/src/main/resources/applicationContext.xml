@@ -18,12 +18,10 @@
 	http://www.springframework.org/schema/util
 	http://www.springframework.org/schema/util/spring-util.xsd">
 
+	<aop:aspectj-autoproxy />
+
+	<!-- Folllowing tag also enables bean auto - wiring -->
 	<context:component-scan base-package="com.myn" />
-
-	<!-- exp1 -->
-	<bean id="theStage" class="com.myn.sprinttest.chapter1.Stage"
-		factory-method="getInstance" />
-
 
 	<bean id="rest-common-messages"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -47,7 +45,7 @@
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
-	<alias name="rest-common-messages1" alias="rest-common-messages"/>
+	<alias name="rest-common-messages1" alias="rest-common-messages" />
 
 	<util:map id="delegationConfiguration" map-class="java.util.HashMap"
 		key-type="java.lang.String" value-type="java.lang.String">
