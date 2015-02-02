@@ -16,9 +16,9 @@ public class App {
 	public static void main(String[] args) {
 		// loading the definitions from the given XML file
 		System.out.println("getting context...");
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
 
-		testI18n(context);
+		testI18n2(context);
 	}
 
 	public static void testI18n(ApplicationContext context) {
@@ -30,5 +30,16 @@ public class App {
 
 	public static void I18n(MessageSource d, String key, String... params) {
 		System.out.println(d.getMessage(key, params, new Locale("en")));
+	}
+	
+	/**
+	 * @param context
+	 */
+	public static void testI18n2(ApplicationContext context){
+		RestCommon d = (RestCommon) context.getBean("restCommon");
+		I18n(d, "reporting.title");
+		I18n(d, "reporting.title.param1", "A");
+		I18n(d, "reporting.title.param2", "A", "B");
+		System.out.println(d.getAllProp());
 	}
 }
