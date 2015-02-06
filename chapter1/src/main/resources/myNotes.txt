@@ -19,7 +19,7 @@
 5. only @Named cannot be used to inject the Bean
 Note: @Named also is equivalent to @Component when used at the top of class.
 	
-@Resource
+@Resource - java Annotation
 1. the bean is resolved "byName" semantics
 2. if 'name' attribute is not provided then bean name is derived from field name
 3. if the bean with given does not exist, 'byType' is used  
