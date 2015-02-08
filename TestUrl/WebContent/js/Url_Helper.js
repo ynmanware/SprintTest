@@ -42,12 +42,18 @@ function getContextPath(updateContextPath) {
 }
 
 function getProductVersion(updateProductVersion) {
-	// expose it as a global variable to able to access across application
+	// expose it as a global variable to be able to access across application
 	if (!updateProductVersion && !(typeof _sd_productVersion == 'undefined')) {
 		return _sd_productVersion;
 	}
+
 	var productVersion = document.getElementById('productVersion');
-	return productVersion ? productVersion.value : "UNKNOWN_PRODUCT_VERSION";
+
+	if (productVersion && productVersion.value) {
+		_sd_productVersion = productVersion.value;
+	}
+
+	return _sd_productVersion;
 }
 
 function include(urls, updateContextPath, library) {
@@ -60,6 +66,7 @@ function include(urls, updateContextPath, library) {
 		for ( var i = 0; i < urls.length; i++) {
 			var newUrl = urls[i];
 
+			// For libraries, it is assumed that actual path would change
 			if (!library) {
 				if (urls[i].indexOf("/") > -1) {
 					var lios = newUrl.lastIndexOf("/");
@@ -68,10 +75,9 @@ function include(urls, updateContextPath, library) {
 				} else {
 					newUrl = productVersion + "/" + newUrl;
 				}
-
-				if (newUrl.indexOf("/") != 0) {
-					newUrl = "/" + newUrl;
-				}
+			}
+			if (newUrl.indexOf("/") != 0) {
+				newUrl = "/" + newUrl;
 			}
 			addScriptTag(head, contextPath + newUrl);
 		}
