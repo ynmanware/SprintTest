@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+</head>
+
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="Controller1 as ctrl">
+			<br>
+			<table>
+				<tr>
+					<td><B> Enter Description in Controller1</B>
+					</td>
+					<td><input type="text" ng-model="ctrl.description"> </inlut>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div ng-controller="Controller2 as ctrl">
+			<table>
+				<tr>
+					<td><B> Description in controller2</B>
+					</td>
+					<td>{{ctrl.description}}</td>
+				</tr>
+			</table>
+		</div>
+		<!-- here you should pass the product version from server side -->
+		<input type="hidden" id="productVersion" value="sd-hash-5">
+	</div>
+	<script type="text/javascript" src="js/Url_Helper.js"></script>
+	<script type="text/javascript">
+		UrlHelper.add('/js/app.js');
+		UrlHelper.add('/css/ld.css');
+		UrlHelper.addLibrary('/js/lib/angular.js');		
+		UrlHelper.include(true); //true indicates update global variables for contextPath and productVersion
+	</script>
+</body>
+</html>

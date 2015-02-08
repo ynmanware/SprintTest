@@ -1,0 +1,58 @@
+body {
+	color: #4d4d4d;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+label {
+	color: #4d4d4d;
+	margin-right: 10px;
+	font-size: 11px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+th {
+	font-size: 11px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+td {
+	font-size: 11px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+select {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	min-width: 100px;
+	height: 21px;
+	color: #4d4d4d;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	background-image: -webkit-linear-gradient(top, #ffffff, #f4f4f4);
+	background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+	background-image: -ms-linear-gradient(top, #ffffff, #f4f4f4);
+	background-image: -o-linear-gradient(top, #ffffff, #f4f4f4);
+	border: 1px solid #9c9c9c; /*Gradient #C9C9C9 - #9C9C9C*/
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+input {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #4d4d4d;
+	border: 1px solid #9b9b9b; /* Gradient #9B9B9B - #C8C8C8 */
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+input[type="text"] {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	height: 18px;
+	padding-left: 5px;
+	min-width: 100px;
+}
