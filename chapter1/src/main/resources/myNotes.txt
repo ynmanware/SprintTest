@@ -33,3 +33,12 @@ Difference between ID and Name
 3. name can contation multiple name to the same bean but it should be unique.
 refer: http://www.intertech.com/Blog/clarifying-spring-framework-ids-and-names/
 
+
+AOP:
+Internally, Spring has two proxy implementations: the JDK dynamic proxy and the CGLIB proxy. By
+default, when the target object to be advised implements some sort of an interface, Spring will use a JDK
+dynamic proxy to create proxy instances of the target. However, when the advised target object doesn’t
+implement an interface (e.g., it’s a concrete class), CGLIB will be used for proxy instance creation.
+
+One of the more noticeable simplifications in Spring AOP is that it supports only one joinpoint type:
+Method Invocation.
