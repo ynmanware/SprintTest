@@ -9,7 +9,7 @@ public class TestAOP {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"com/myn/general/aop/annotation/passingp/app.xml");
-		Thinker t = (Thinker) context.getBean("volunteer");
+		Thinker t = context.getBean("volunteer", Thinker.class);
 
 		Person person = new Person("Yogesh", 1);
 
